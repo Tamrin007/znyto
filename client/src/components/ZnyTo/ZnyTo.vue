@@ -37,7 +37,7 @@ export default {
     // TODO: replace with WebSockets
     getRate() {
       this.interval = setInterval(() => {
-        const url = 'http://localhost:8000';
+        const url = 'https://46da7e28.ngrok.io/';
         const xhr = new XMLHttpRequest();
         xhr.open('GET', url);
         xhr.addEventListener('load', () => {
