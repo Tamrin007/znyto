@@ -37,7 +37,13 @@ export default {
     // TODO: replace with WebSockets
     getRate() {
       this.interval = setInterval(() => {
-        // TODO: get rate per second
+        const url = 'http://localhost:8000';
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', url);
+        xhr.addEventListener('load', () => {
+          this.rate = parseFloat(xhr.responseText);
+        }, false);
+        xhr.send();
       }, 1000);
     },
   },
